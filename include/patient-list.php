@@ -45,24 +45,22 @@
 		mysqli_stmt_execute($q);
 		
 		$result = mysqli_stmt_get_result($q);
-		while ($row = mysqli_fetch_assoc($result))
-		{
+		$row = mysqli_fetch_assoc($result);
 			echo '<div class = "pending-column bottom-border dotted-border">';
-				echo '<div class = "pending-item  name-column">
-						<a href = "patient-info.php?bnid='. $row['bnid']. '">';
-				echo		$row['bnname'];
-				echo	'</a>
-					</div>';
-				
-				echo '<div class = "pending-item  service-column">';
-				echo		$row['sname'];
-				echo '</div>';
-				
-				echo '<div class = "pending-item  name-column">';
-				echo		$row['ngaykham'];
-				echo	'</div>';
-				echo '</div>';
-		}
+			echo '<div class = "pending-item  name-column">
+					<a href = "patient-info.php?bnid='. $row['bnid']. '">';
+			echo		$row['bnname'];
+			echo	'</a>
+				</div>';
+			
+			echo '<div class = "pending-item  service-column">';
+			echo		$row['sname'];
+			echo '</div>';
+			
+			echo '<div class = "pending-item  name-column">';
+			echo		$row['ngaykham'];
+			echo	'</div>';
+			echo '</div>';
 	}
 	
 	
